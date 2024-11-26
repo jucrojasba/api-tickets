@@ -24,4 +24,6 @@ Rails.application.routes.draw do
   resources :tickets do
     get :logs, on: :member # Esto genera la ruta GET /tickets/:ticket_id/logs
   end
+
+  patch "tickets/:ticket_id/status", to: "ticket#update_status"
 end
