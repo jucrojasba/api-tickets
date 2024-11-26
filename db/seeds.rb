@@ -7,6 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
 [
   'available',
   'reserved',
@@ -15,4 +16,5 @@
 ].each do |state|
     Status.find_or_create_by!(name: state)
 end
+
 

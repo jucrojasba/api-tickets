@@ -26,4 +26,8 @@ Rails.application.routes.draw do
   end
 
   patch "tickets/:ticket_id/status", to: "ticket#update_status"
+
+  resources :events, only: [  :show ] do
+    resources :tickets, only: [ :create ]
+  end
 end

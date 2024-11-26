@@ -29,8 +29,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_26_150849) do
 
   create_table "tickets", force: :cascade do |t|
     t.integer "event_id", null: false
-    t.date "expire_date", default: -> { "DATE('now', '+30 days')" }, null: false
-    t.integer "status_id", null: false
+    t.date "expire_date", null: false
+    t.integer "status_id", default: 1, null: false
     t.integer "serial_ticket"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
