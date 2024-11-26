@@ -7,11 +7,11 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-Status.create([
-  { id: 1, name: 'available' },
-  { id: 2, name: 'reserved' },
-  { id: 3, name: 'sold' },
-  { id: 4, name: 'canceled' }
-]).each do |state|
+[
+  'available',
+  'reserved',
+  'sold',
+  'canceled'
+].each do |state|
     Status.find_or_create_by!(name: state)
 end
