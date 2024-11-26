@@ -12,16 +12,13 @@ end
 
 # Fetch all statuses
 statuses = Status.all
-existing_serials = Set.new(Ticket.pluck(:serial_ticket)) # Cargar seriales únicos desde la base de datos
 
-# Generate 1000 tickets and ticket logs
+# Generate 1000 unique tickets and ticket logs
 1000.times do
-  begin
+  serial_ticket = SecureRandom.hex(8)
+  while Ticket.exists?(serial_ticket: serial_ticket)
     serial_ticket = SecureRandom.hex(8)
-    puts(serial_ticket)
-  end while existing_serials.include?(serial_ticket) # Generar hasta que sea único
-
-  existing_serials.add(serial_ticket)
+  end
 
   ticket = Ticket.create!(
     event_id: Faker::Number.between(from: 1, to: 20), # Fixed range of event IDs
