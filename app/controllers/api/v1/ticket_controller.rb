@@ -2,10 +2,9 @@ class Api::V1::TicketController < ApplicationController
   def summary
     event_id = params[:event_id]# params
     # searching
-    tickets = Ticket.where(event_id: event_id)
-
+    tickets = Ticket.per_event(:event_id)
     # json REsponse
-    render json: {# Add ticket required calcs
+    render json: {# ticket required calcs
     event_id: event_id,
     available_tickets: tickets.where(status: "available").count,
     reserved_tickets: tickets.where(status: "reserved").count,
