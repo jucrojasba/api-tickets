@@ -8,10 +8,10 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 [
-  name: 'available',
-  name: 'reserved',
-  name: 'sold',
-  name: 'canceled'
+  'available',
+  'reserved',
+  'sold',
+  'canceled'
 ].each do |state|
     Status.find_or_create_by!(name: state)
 end
