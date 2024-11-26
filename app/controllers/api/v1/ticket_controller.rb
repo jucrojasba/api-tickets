@@ -1,13 +1,12 @@
 class Api::V1::TicketController < ApplicationController
   def summary
-    event_id = params[:event_id]
+    event_id = params[:event_id]# params
 
-    # Aquí implementas la lógica para obtener los datos de resumen
-    # Por ejemplo, suponiendo que tienes un modelo Ticket:
+    # searching
     tickets = Ticket.where(event_id: event_id)
 
-    # Crea la respuesta JSON
-    render json: {
+    # json REsponse
+    render json: {# TODOAdd ticket required calcs
       event_id: event_id,
       total_tickets: tickets.count,
       sold_tickets: tickets.where(status: "sold").count,
