@@ -15,3 +15,4 @@
 ].each do |state|
     Status.find_or_create_by!(name: state)
 end
+

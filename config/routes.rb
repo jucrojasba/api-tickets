@@ -20,4 +20,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  resources :tickets do
+    get :logs, on: :member # Esto genera la ruta GET /tickets/:ticket_id/logs
+  end
 end

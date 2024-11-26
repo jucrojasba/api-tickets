@@ -1,6 +1,6 @@
 class Ticket < ApplicationRecord
   belongs_to :status
-  has_many :ticket_logs
+  has_many :ticket_logs, dependent: :destroy
 
   validates :event_id, presence: true, numericality: { greater_than: 0 }, allow_nil: false
   validates :expire_date, presence: true
