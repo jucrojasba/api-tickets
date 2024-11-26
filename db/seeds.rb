@@ -8,8 +8,14 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 Status.create([
-  { id: 1, name: 'available' },
-  { id: 2, name: 'reserved' },
-  { id: 3, name: 'sold' },
-  { id: 4, name: 'canceled' }
+  {  name: 'available' },
+  {  name: 'reserved' },
+  {  name: 'sold' },
+  {  name: 'canceled' }
+])
+Event.create([
+  { id: 1, name: 'event1', capacity: 100 },
+  { id: 2, name: 'event2', capacity: 90 },
+  { id: 3, name: 'event3', capacity: 80 },
+  { id: 4, name: 'event4', capacity: 70 }
 ])

@@ -1,0 +1,9 @@
+
+<h1><%= @event.name %></h1>
+
+<p>Capacity: <%= @event.capacity %></p> 
+
+<%= button_to 'Back to events', events_path %>
+
+
+<%= button_to 'Create tickets for this event', event_tickets_path(@event), method: :post %>
