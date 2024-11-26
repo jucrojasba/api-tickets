@@ -1,20 +1,35 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+require 'faker'
 
+# Populate statuses
 [
   'available',
   'reserved',
   'sold',
   'canceled'
 ].each do |state|
-    Status.find_or_create_by!(name: state)
+  Status.find_or_create_by!(name: state)
 end
 
+# Fetch all statuses
+statuses = Status.all
 
+# Generate 1000 tickets and ticket logs
+1000.times do
+  ticket = Ticket.create!(
+    event_id: Faker::Number.between(from: 1, to: 1000), # Event IDs from external API
+    expire_date: Faker::Date.forward(days: 365),       # Random future date
+    status_id: statuses.sample.id,                    # Random status
+    serial_ticket: SecureRandom.hex(8),               # Unique serial
+    created_at: Time.now,
+    updated_at: Time.now
+  )
+
+  TicketLog.create!(
+    ticket_id: ticket.id,
+    status_id: ticket.status_id,
+    created_at: Time.now,
+    updated_at: Time.now
+  )
+end
+
+puts "Seed completed: 1000 tickets and their logs have been created."
