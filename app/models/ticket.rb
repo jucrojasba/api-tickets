@@ -1,5 +1,4 @@
 class Ticket < ApplicationRecord
-  belongs_to :event
   belongs_to :status
   has_many :ticket_logs, dependent: :destroy
 
