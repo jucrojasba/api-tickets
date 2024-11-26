@@ -12,4 +12,6 @@ Status.create([
   { id: 2, name: 'reserved' },
   { id: 3, name: 'sold' },
   { id: 4, name: 'canceled' }
-])
+]).each do |state|
+    Status.find_or_create_by!(name: state)
+end
