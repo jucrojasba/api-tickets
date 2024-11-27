@@ -12,7 +12,8 @@ class TicketsController < ApplicationController
           {
             id: log.id,
             Status: log.status.name,
-            changed_at: log.created_at
+            changed_at: log.created_at,
+            event_id: @ticket.event_id
           }
         end
       }, status: :ok
@@ -49,21 +50,21 @@ class TicketsController < ApplicationController
   end
 
   def summary
-    event_id = params[:event_id]# params
-    # searching
-    tickets = Ticket.per_event(:event_id)
-    # json REsponse
+    event_id = params[:event_id]
+
+    tickets = Ticket.per_event(event_id).joins(:status)
+
     if tickets.exists?
-      render json: {# ticket required calcs
-      event_id: event_id,
-      available_tickets: tickets.where(status: "available").count,
-      reserved_tickets: tickets.where(status: "reserved").count,
-      sold_tickets: tickets.where(status: "sold").count,
-      canceled_tickets: tickets.where(status: "canceled").count,
-      total_tickets: tickets.count
+      render json: {
+        event_id: event_id,
+        available_tickets: tickets.where(statuses: { name: "available" }).count,
+        reserved_tickets: tickets.where(statuses: { name: "reserved" }).count,
+        sold_tickets: tickets.where(statuses: { name: "sold" }).count,
+        canceled_tickets: tickets.where(statuses: { name: "canceled" }).count,
+        total_tickets: tickets.count
       }, status: :ok
     else
-      render json: { error: "Not event" }, statuts: :not_found
+      render json: { error: "Not event" }, status: :not_found
     end
   rescue ActiveRecord::RecordNotFound
     render json: { error: "Event not found" }, status: :not_found
