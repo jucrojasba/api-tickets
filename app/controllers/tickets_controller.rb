@@ -4,13 +4,13 @@ class TicketsController < ApplicationController
     ticket = Ticket.find_by(id: params[:ticket_id])
 
     if ticket
-      logs = ticket.ticket_logs.select(:id, :state, :created_at, :updated_at)
+      logs = ticket.ticket_logs.select(:id, :status, :created_at, :updated_at)
       render json: {
         ticket_id: ticket.id,
         history: logs.map do |log|
           {
             id: log.id,
-            state: log.state,
+            status: log.status.name,
             changed_at: log.created_at
           }
         end
