@@ -36,6 +36,20 @@ gem "bootsnap", require: false
 
 gem "faker"
 
+ # rspec-rails integrates the Rails testing helpers into RSpec.
+ gem "rspec-rails", "~> 7.1"
+ # factory_bot provides a framework and DSL for defining and using factories - less error-prone, more explicit, and all-around easier to work with than fixtures
+ gem "factory_bot_rails", "~> 6.4", ">= 6.4.4"
+ gem "rails-controller-testing", "~> 1.0", ">= 1.0.5"
+
+ # Code coverage for Ruby with a UI
+ gem "simplecov", "~> 0.22.0"
+ # pruebas de integración o pruebas de características (feature tests)
+ gem "capybara"
+ gem "selenium-webdriver"
+
+ gem "httparty"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
