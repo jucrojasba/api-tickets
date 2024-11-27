@@ -1,16 +1,16 @@
 class TicketsController < ApplicationController
   # GET /tickets/:ticket_id/logs
   def logs
-    ticket = Ticket.find_by(id: params[:ticket_id])
+    @ticket = Ticket.find_by(id: params[:id])
 
-    if ticket
-      logs = ticket.ticket_logs.select(:id, :status, :created_at, :updated_at)
+    if @ticket
+      logs = @ticket.ticket_logs.select(:id, :status_id, :created_at, :updated_at)
       render json: {
-        ticket_id: ticket.id,
+        ticket_id: @ticket.id,
         history: logs.map do |log|
           {
             id: log.id,
-            status: log.status.name,
+            Status: log.status.name,
             changed_at: log.created_at
           }
         end
@@ -70,6 +70,9 @@ class TicketsController < ApplicationController
   end
 
   private
+  def set_ticket
+    @ticket = Ticket.find_by(id: params[:id])
+  end
 
   def can_update_status?(ticket, new_status)
     return false if ticket.status == new_status
