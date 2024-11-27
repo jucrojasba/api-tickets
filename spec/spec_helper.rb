@@ -3,15 +3,20 @@
 # The generated `.rspec` file contains `--require spec_helper` which will cause
 # this file to always be loaded, without a need to explicitly require it in any
 # files.
-#
-# Given that it is always loaded, you are encouraged to keep this file as
-# light-weight as possible. Requiring heavyweight dependencies from this file
-# will add to the boot time of your test suite on EVERY test run, even for an
-# individual file that may not need all of that loaded. Instead, consider making
-# a separate helper file that requires the additional dependencies and performs
-# the additional setup, and require it from the spec files that actually need
-# it.
-#
+
+# Configuración de SimpleCov para cobertura de código
+require 'simplecov'
+SimpleCov.start do
+  enable_coverage :branch # Cobertura por ramas de código
+  add_filter '/spec/'     # Excluye archivos de pruebas
+  add_filter '/config/'   # Excluye archivos de configuración
+  add_filter '/lib/tasks/' # Excluye tareas de rake
+end
+
+SimpleCov.formatter = SimpleCov::Formatter::HTMLFormatter
+
+puts "SimpleCov configurado: los reportes estarán en la carpeta 'coverage'."
+
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -44,9 +49,9 @@ RSpec.configure do |config|
   # triggering implicit auto-inclusion in groups with matching metadata.
   config.shared_context_metadata_behavior = :apply_to_host_groups
 
-# The settings below are suggested to provide a good initial experience
-# with RSpec, but feel free to customize to your heart's content.
-=begin
+  # The settings below are suggested to provide a good initial experience
+  # with RSpec, but feel free to customize to your heart's content.
+
   # This allows you to limit a spec run to individual examples or groups
   # you care about by tagging them with `:focus` metadata. When nothing
   # is tagged with `:focus`, all examples get run. RSpec also provides
@@ -90,5 +95,4 @@ RSpec.configure do |config|
   # test failures related to randomization by passing the same `--seed` value
   # as the one that triggered the failure.
   Kernel.srand config.seed
-=end
 end
