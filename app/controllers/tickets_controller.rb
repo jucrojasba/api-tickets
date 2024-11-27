@@ -1,17 +1,18 @@
 class TicketsController < ApplicationController
   # GET /tickets/:ticket_id/logs
   def logs
-    ticket = Ticket.find_by(id: params[:ticket_id])
+    @ticket = Ticket.find_by(id: params[:id])
 
-    if ticket
-      logs = ticket.ticket_logs.select(:id, :state, :created_at, :updated_at)
+    if @ticket
+      logs = @ticket.ticket_logs.select(:id, :status_id, :created_at, :updated_at)
       render json: {
-        ticket_id: ticket.id,
+        ticket_id: @ticket.id,
         history: logs.map do |log|
           {
             id: log.id,
-            state: log.state,
-            changed_at: log.created_at
+            Status: log.status.name,
+            changed_at: log.created_at,
+            event_id: @ticket.event_id
           }
         end
       }, status: :ok
@@ -49,27 +50,31 @@ class TicketsController < ApplicationController
   end
 
   def summary
-    event_id = params[:event_id]# params
-    # searching
-    tickets = Ticket.per_event(:event_id)
-    # json REsponse
+    event_id = params[:event_id]
+
+    tickets = Ticket.per_event(event_id).joins(:status)
+
     if tickets.exists?
-      render json: {# ticket required calcs
-      event_id: event_id,
-      available_tickets: tickets.where(status: "available").count,
-      reserved_tickets: tickets.where(status: "reserved").count,
-      sold_tickets: tickets.where(status: "sold").count,
-      canceled_tickets: tickets.where(status: "canceled").count,
-      total_tickets: tickets.count
+      render json: {
+        event_id: event_id,
+        available_tickets: tickets.where(statuses: { name: "available" }).count,
+        reserved_tickets: tickets.where(statuses: { name: "reserved" }).count,
+        sold_tickets: tickets.where(statuses: { name: "sold" }).count,
+        canceled_tickets: tickets.where(statuses: { name: "canceled" }).count,
+        total_tickets: tickets.count
       }, status: :ok
     else
-      render json: { error: "Not event" }, statuts: :not_found
+      render json: { error: "Not event" }, status: :not_found
     end
   rescue ActiveRecord::RecordNotFound
     render json: { error: "Event not found" }, status: :not_found
   end
 
+
   private
+  def set_ticket
+    @ticket = Ticket.find_by(id: params[:id])
+  end
 
   def can_update_status?(ticket, new_status)
     return false if ticket.status == new_status
