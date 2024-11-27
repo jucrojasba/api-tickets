@@ -30,7 +30,6 @@ class Ticket < ApplicationRecord
     serial = name_event.split.map { | word | word[0] }.join
 
     serial += id_event.to_s
-    serial
-  end
-end
+    serial
+  end
 end
