@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  # optional rout for the moment attached to changes
+
+  get "events/:event_id/tickets/summary", to: "tickets#summary"
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -11,4 +15,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  resources :tickets do
+    get :logs, on: :member # Esto genera la ruta GET /tickets/:ticket_id/logs
+  end
+
+  patch "tickets/:ticket_id/status", to: "ticket#update_status"
 end
