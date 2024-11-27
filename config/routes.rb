@@ -1,13 +1,8 @@
 Rails.application.routes.draw do
   # optional rout for the moment attached to changes
-  #
-  namespace :api do
-    namespace :v1 do # Cambia a la versión que uses
-      resources :events, only: [] do
-        get "tickets/summary", to: "tickets#summary", on: :member
-      end
-    end
-  end
+
+  get "events/:event_id/tickets/summary", to: "tickets#summary"
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -26,8 +21,4 @@ Rails.application.routes.draw do
   end
 
   patch "tickets/:ticket_id/status", to: "ticket#update_status"
-
-  # resources :events, only: [  :show ] do
-  # resources :tickets, only: [ :create ]
-  # end
 end
