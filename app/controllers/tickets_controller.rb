@@ -11,7 +11,8 @@ class TicketsController < ApplicationController
           {
             id: log.id,
             Status: log.status.name,
-            changed_at: log.created_at
+            changed_at: log.created_at,
+            event_id: @ticket.event_id
           }
         end
       }, status: :ok
