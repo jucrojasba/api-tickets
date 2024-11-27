@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # optional rout for the moment attached to changes
 
-  get "ticket/summary", to: "tickets#summary", on: :member
+  get "events/:event_id/tickets/summary", to: "tickets#summary"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -21,8 +21,4 @@ Rails.application.routes.draw do
   end
 
   patch "tickets/:ticket_id/status", to: "ticket#update_status"
-
-  resources :events, only: [  :show ] do
-    resources :tickets, only: [ :create ]
-  end
 end
