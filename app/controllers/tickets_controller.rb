@@ -1,6 +1,4 @@
 class TicketsController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: [ :create ]
-
   # GET /tickets/:ticket_id/logs
   def logs
     ticket = Ticket.find_by(id: params[:ticket_id])
@@ -50,30 +48,25 @@ class TicketsController < ApplicationController
     end
   end
 
-  # POST /events/:event_id/tickets
-  def create
-    event = Event.find_by(id: params[:event_id])
-
-    if event.nil?
-      render json: { error: "Event not found" }, status: :not_found
-      return
-    end
-
-    if event.tickets.count >= event.capacity
-      render json: { errors: [ "Event is at full capacity" ] }, status: :unprocessable_entity
-      return
-    end
-
-    ticket = event.tickets.create(
-      expire_date: 30.days.from_now,
-      serial_ticket: SecureRandom.hex(4).upcase
-    )
-
-    if ticket.persisted?
-      render json: ticket, status: :created
+  def summary
+    event_id = params[:event_id]# params
+    # searching
+    tickets = Ticket.per_event(:event_id)
+    # json REsponse
+    if tickets.exists?
+      render json: {# ticket required calcs
+      event_id: event_id,
+      available_tickets: tickets.where(status: "available").count,
+      reserved_tickets: tickets.where(status: "reserved").count,
+      sold_tickets: tickets.where(status: "sold").count,
+      canceled_tickets: tickets.where(status: "canceled").count,
+      total_tickets: tickets.count
+      }, status: :ok
     else
-      render json: { errors: ticket.errors.full_messages }, status: :unprocessable_entity
+      render json: { error: "Not event" }, statuts: :not_found
     end
+  rescue ActiveRecord::RecordNotFound
+    render json: { error: "Event not found" }, status: :not_found
   end
 
   private
@@ -98,22 +91,5 @@ class TicketsController < ApplicationController
 
   def log_status_change(ticket, new_status)
     ticket.ticket_logs.create(state: new_status.name, created_at: Time.current)
-  end
-
-  def summary
-    event_id = params[:event_id]# params
-    # searching
-    tickets = Ticket.per_event(:event_id)
-    # json REsponse
-    render json: {# ticket required calcs
-    event_id: event_id,
-    available_tickets: tickets.where(status: "available").count,
-    reserved_tickets: tickets.where(status: "reserved").count,
-    sold_tickets: tickets.where(status: "sold").count,
-    canceled_tickets: tickets.where(status: "canceled").count,
-    total_tickets: tickets.count
-    }, status: :ok
-  rescue ActiveRecord::RecordNotFound
-    render json: { error: "Event not found" }, status: :not_found
   end
 end
