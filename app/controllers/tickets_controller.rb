@@ -54,7 +54,7 @@ class TicketsController < ApplicationController
     if quantity.to_i <= tickets.count()
 
       if tickets.exists?
-        ticket_data = tickets.map { |ticket| { id: ticket.id, serial: ticket.serial_ticket, status: ticket.status.name } }
+        ticket_data = tickets.map { |ticket| { id: ticket.id, serial: ticket.serial_ticket} }
 
         render json: {
           event_id: event_id,
