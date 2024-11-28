@@ -24,3 +24,4 @@ Rails.application.routes.draw do
 
   post "api/v1/events/:event_id/tickets", to: "tickets#create"
 end
+
