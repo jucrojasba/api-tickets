@@ -1,0 +1,11 @@
+one:
+  event_id: 1
+  status: available
+  expire_date: <%= 30.days.from_now %>
+  serial_ticket: "ticket-001"
+
+two:
+  event_id: 1
+  status: reserved
+  expire_date: <%= 30.days.from_now %>
+  serial_ticket: "ticket-002"

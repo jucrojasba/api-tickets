@@ -1,0 +1,11 @@
+available:
+  name: "available"
+
+reserved:
+  name: "reserved"
+
+sold:
+  name: "sold"
+
+canceled:
+  name: "canceled"

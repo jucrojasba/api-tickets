@@ -1,7 +1,7 @@
 class TicketsController < ApplicationController
-  # GET /tickets/:ticket_id/logs
+  skip_before_action :verify_authenticity_token, only: [ :update_status ]
 
-  skip_before_action :verify_authenticity_token, only: [ :create ]
+  # GET /tickets/:ticket_id/logs
   def logs
     @ticket = Ticket.find_by(id: params[:id])
     if @ticket
@@ -21,31 +21,27 @@ class TicketsController < ApplicationController
       render json: { error: "Ticket not found" }, status: :not_found
     end
   end
+
+
   # PATCH/PUT /tickets/:ticket_id/update_status
   def update_status
-    ticket = Ticket.find_by(id: params[:ticket_id])
-    new_status = Status.find_by(id: params[:new_status_id])
+    ticket = Ticket.find(params[:ticket_id])
+    new_status = Status.find(params[:new_status_id])
 
-    if ticket.nil?
-      render json: { error: "Ticket not found" }, status: :not_found
-      return
-    end
+    begin
+      if ticket.status.can_transition_to?(new_status)
+        ticket.status = new_status
+        ticket.save!
 
-    if new_status.nil?
-      render json: { error: "Status not found" }, status: :not_found
-      return
-    end
+        ticket_logs_controller = TicketLogsController.new
+        ticket_logs_controller.create_log(ticket, new_status)
 
-    if can_update_status?(ticket, new_status)
-      ticket.status = new_status
-      if ticket.save
-        log_status_change(ticket, new_status)
         render json: ticket, status: :ok
       else
-        render json: { errors: ticket.errors.full_messages }, status: :unprocessable_entity
+        render json: { error: "Invalid status change" }, status: :unprocessable_entity
       end
-    else
-      render json: { error: "Invalid status change" }, status: :bad_request
+    rescue => e
+      render json: { error: e.message }, status: :internal_server_error
     end
   end
 
@@ -102,30 +98,5 @@ class TicketsController < ApplicationController
     end
 
     render json: { message: "#{tickets_created.size} tickets created successfully", tickets: tickets_created }, status: :created
-  end
-
-
-
-  private
-  def can_update_status?(ticket, new_status)
-    return false if ticket.status == new_status
-
-    valid_transitions = {
-      "New" => [ "Open" ],
-      "Open" => [ "InProgress", "Resolved", "Cancelled" ],
-      "InProgress" => [ "Resolved", "Cancelled" ],
-      "Resolved" => [ "Closed", "Reserved" ],
-      "Closed" => [ "Available", "Sold" ],
-      "Cancelled" => [],
-      "Reserved" => [ "Sold" ],
-      "Available" => [ "Reserved", "Sold" ],
-      "Sold" => []
-    }
-
-    valid_transitions[ticket.status.name]&.include?(new_status.name) || false
-  end
-
-  def log_status_change(ticket, new_status)
-    ticket.ticket_logs.create(state: new_status.name, created_at: Time.current)
   end
 end
