@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   end
 
   patch "tickets/:ticket_id/status", to: "ticket#update_status"
+
+  post "api/v1/events/:event_id/tickets", to: "tickets#create"
 end
