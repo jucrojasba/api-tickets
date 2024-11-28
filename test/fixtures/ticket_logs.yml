@@ -1,0 +1,11 @@
+log_1:
+  ticket: one
+  status: reserved
+  created_at: <%= 2.days.ago %>
+  updated_at: <%= 2.days.ago %>
+
+log_2:
+  ticket: two
+  status: sold
+  created_at: <%= 1.day.ago %>
+  updated_at: <%= 1.day.ago %>
