@@ -53,17 +53,24 @@ class TicketsController < ApplicationController
   def reserve_tickets
     event_id = params[:event_id]
     quantity = params[:quantity]
-    tickets = Ticket.per_event(event_id).joins(:status).where(statuses: { name: "available" })
-    # TODO migrate db and test
-    if tickets.exists?
-      render json: {
-        event_id: event_id,
-        status: "funcionó"
-      }, status: :ok
+    tickets = Ticket.giving_ticket_avaliables(event_id, quantity, "available")
+
+    if quantity.to_i <= tickets.count()
+
+      if tickets.exists?
+        ticket_data = tickets.map { |ticket| { id: ticket.id, serial: ticket.serial_ticket, status: ticket.status.name } }
+
+        render json: {
+          event_id: event_id,
+          tickets: ticket_data
+        }, status: :ok
+      end
     else
-        render json: { error: "Not event" }, status: :not_found
+      render json: { error: "not enough tickets" }, status: :range_not_satisfiable
+
     end
   end
+
 
   def summary
     event_id = params[:event_id]
