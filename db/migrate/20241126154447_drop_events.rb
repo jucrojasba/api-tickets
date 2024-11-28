@@ -3,4 +3,3 @@ class DropEvents < ActiveRecord::Migration[7.2]
     drop_table :events if table_exists?(:events)
   end
 end
-
