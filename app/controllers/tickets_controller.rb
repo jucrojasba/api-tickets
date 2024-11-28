@@ -75,8 +75,8 @@ class TicketsController < ApplicationController
       return
     end
 
-    ticket_quantity = @ticket_data["data"]["ticket_quantity"].to_i
-    event_capacity = @ticket_data["capacity"].to_i
+    ticket_quantity = @ticket_data["data"]["tickets_quantity"].to_i
+    event_capacity = @ticket_data["data"]["capacity"].to_i
 
     if ticket_quantity > event_capacity
       render json: { error: "Capacity exceeded" }, status: :unprocessable_entity
