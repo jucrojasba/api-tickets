@@ -87,18 +87,21 @@ class TicketsController < ApplicationController
       return
     end
 
+    tickets_created = []
     ticket_quantity.times do
-      ticket = Ticket.new(event_id: event_id)
-
+      ticket = Ticket.new(
+        event_id: event_id,
+        event_data: @ticket_data["data"]
+      )
       if ticket.save
-        # Optionally, you can log each created ticket or any other logic you want
+        tickets_created << ticket
       else
         render json: { errors: ticket.errors.full_messages }, status: :unprocessable_entity
         return
       end
     end
 
-    render json: { message: "#{ticket_quantity} tickets created successfully", event_id: event_id }, status: :created
+    render json: { message: "#{tickets_created.size} tickets created successfully", tickets: tickets_created }, status: :created
   end
 
 
