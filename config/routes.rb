@@ -20,5 +20,8 @@ Rails.application.routes.draw do
     get :logs, on: :member # Esto genera la ruta GET /tickets/:ticket_id/logs
   end
 
-  patch "tickets/:ticket_id/status", to: "ticket#update_status"
+  patch "tickets/:ticket_id/status", to: "tickets#update_status"
+
+  post "api/v1/events/:event_id/tickets", to: "tickets#create"
 end
+

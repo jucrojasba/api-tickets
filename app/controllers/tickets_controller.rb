@@ -1,8 +1,9 @@
 class TicketsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [ :update_status ]
+
   # GET /tickets/:ticket_id/logs
   def logs
     @ticket = Ticket.find_by(id: params[:id])
-
     if @ticket
       logs = @ticket.ticket_logs.select(:id, :status_id, :created_at, :updated_at)
       render json: {
@@ -21,31 +22,26 @@ class TicketsController < ApplicationController
     end
   end
 
+
   # PATCH/PUT /tickets/:ticket_id/update_status
   def update_status
-    ticket = Ticket.find_by(id: params[:ticket_id])
-    new_status = Status.find_by(id: params[:new_status_id])
+    ticket = Ticket.find(params[:ticket_id])
+    new_status = Status.find(params[:new_status_id])
 
-    if ticket.nil?
-      render json: { error: "Ticket not found" }, status: :not_found
-      return
-    end
+    begin
+      if ticket.status.can_transition_to?(new_status)
+        ticket.status = new_status
+        ticket.save!
 
-    if new_status.nil?
-      render json: { error: "Status not found" }, status: :not_found
-      return
-    end
+        ticket_logs_controller = TicketLogsController.new
+        ticket_logs_controller.create_log(ticket, new_status)
 
-    if can_update_status?(ticket, new_status)
-      ticket.status = new_status
-      if ticket.save
-        log_status_change(ticket, new_status)
         render json: ticket, status: :ok
       else
-        render json: { errors: ticket.errors.full_messages }, status: :unprocessable_entity
+        render json: { error: "Invalid status change" }, status: :unprocessable_entity
       end
-    else
-      render json: { error: "Invalid status change" }, status: :bad_request
+    rescue => e
+      render json: { error: e.message }, status: :internal_server_error
     end
   end
 
@@ -70,31 +66,37 @@ class TicketsController < ApplicationController
     render json: { error: "Event not found" }, status: :not_found
   end
 
+  def create
+    event_id = params[:event_id]
+    @ticket_data = Ticket.get_data(event_id)
 
-  private
-  def set_ticket
-    @ticket = Ticket.find_by(id: params[:id])
-  end
+    if @ticket_data.nil?
+      render json: { error: "Event not found" }, status: :not_found
+      return
+    end
 
-  def can_update_status?(ticket, new_status)
-    return false if ticket.status == new_status
+    ticket_quantity = @ticket_data["data"]["tickets_quantity"].to_i
+    event_capacity = @ticket_data["data"]["capacity"].to_i
 
-    valid_transitions = {
-      "New" => [ "Open" ],
-      "Open" => [ "InProgress", "Resolved", "Cancelled" ],
-      "InProgress" => [ "Resolved", "Cancelled" ],
-      "Resolved" => [ "Closed", "Reserved" ],
-      "Closed" => [ "Available", "Sold" ],
-      "Cancelled" => [],
-      "Reserved" => [ "Sold" ],
-      "Available" => [ "Reserved", "Sold" ],
-      "Sold" => []
-    }
+    if ticket_quantity > event_capacity
+      render json: { error: "Capacity exceeded" }, status: :unprocessable_entity
+      return
+    end
 
-    valid_transitions[ticket.status.name]&.include?(new_status.name) || false
-  end
+    tickets_created = []
+    ticket_quantity.times do
+      ticket = Ticket.new(
+        event_id: event_id,
+        event_data: @ticket_data["data"]
+      )
+      if ticket.save
+        tickets_created << ticket
+      else
+        render json: { errors: ticket.errors.full_messages }, status: :unprocessable_entity
+        return
+      end
+    end
 
-  def log_status_change(ticket, new_status)
-    ticket.ticket_logs.create(state: new_status.name, created_at: Time.current)
+    render json: { message: "#{tickets_created.size} tickets created successfully", tickets: tickets_created }, status: :created
   end
 end
