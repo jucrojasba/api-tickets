@@ -49,6 +49,22 @@ class TicketsController < ApplicationController
     end
   end
 
+  # GET events/:event_id/tickets/:quantity
+  def reserve_tickets
+    event_id = params[:event_id]
+    quantity = params[:quantity]
+    tickets = Ticket.per_event(event_id).joins(:status).where(statuses: { name: "available" })
+    # TODO migrate db and test
+    if tickets.exists?
+      render json: {
+        event_id: event_id,
+        status: "funcionó"
+      }, status: :ok
+    else
+        render json: { error: "Not event" }, status: :not_found
+    end
+  end
+
   def summary
     event_id = params[:event_id]
 
