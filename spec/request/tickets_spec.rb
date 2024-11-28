@@ -1,11 +1,9 @@
 require 'rails_helper'
 
-require 'rails_helper'
-
 RSpec.describe "GET /tickets/:id/logs", type: :request do
-  # Asegúrate de que hay datos en la base de datos antes de ejecutar las pruebas
-  let(:ticket) { Ticket.first } # Toma el primer ticket
-  let(:status) { ticket.status } # Obtén el status del ticket
+  let!(:status) { create(:status, name: "Open") } # Crea un estado para el ticket
+  let!(:ticket) { create(:ticket, status: status) } # Crea un ticket con un estado
+  let!(:log1) { create(:ticket_log, ticket: ticket, status_id: status.id) } # Crea un log para el ticket
 
   context "when the ticket exists and has logs" do
     it "returns the history of the ticket" do
@@ -18,14 +16,14 @@ RSpec.describe "GET /tickets/:id/logs", type: :request do
       expect(json["ticket_id"]).to eq(ticket.id)
 
       # Verifica que haya al menos un log
-      expect(json["history"].size).to be > 0
+      expect(json["history"].size).to eq(1)
 
       # Verifica la estructura del primer log
       first_log = json["history"].first
       expect(first_log).to include(
-        "id" => ticket.ticket_logs.first.id,
-        "Status" => ticket.ticket_logs.first.status.name,
-        "changed_at" => ticket.ticket_logs.first.created_at.as_json,
+        "id" => log1.id,
+        "Status" => status.name,
+        "changed_at" => log1.created_at.as_json,
         "event_id" => ticket.event_id
       )
     end
