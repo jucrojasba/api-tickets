@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.2].define(version: 2024_11_28_171237) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "statuses", force: :cascade do |t|
     t.string "name", limit: 50, null: false
     t.datetime "created_at", null: false
@@ -18,10 +21,10 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_28_171237) do
   end
 
   create_table "ticket_logs", force: :cascade do |t|
-    t.integer "ticket_id", null: false
+    t.bigint "ticket_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "status_id", null: false
+    t.bigint "status_id", null: false
     t.index ["status_id"], name: "index_ticket_logs_on_status_id"
     t.index ["ticket_id"], name: "index_ticket_logs_on_ticket_id"
   end
@@ -29,7 +32,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_28_171237) do
   create_table "tickets", force: :cascade do |t|
     t.integer "event_id", null: false
     t.date "expire_date", null: false
-    t.integer "status_id", default: 1, null: false
+    t.bigint "status_id", default: 1, null: false
     t.string "serial_ticket"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
