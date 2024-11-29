@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :tickets do
+    collection do
+      get :summary
+    end
     get :logs, on: :member # Esto genera la ruta GET /tickets/:ticket_id/logs
   end
 

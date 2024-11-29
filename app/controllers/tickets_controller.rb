@@ -1,7 +1,9 @@
-class TicketsController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: [ :update_status ]
 
-  # GET /tickets/:ticket_id/logs
+require_relative "../../app/controllers/tickets_controller"
+
+class TicketsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [ :update_status, :create ]
+
   def logs
     @ticket = Ticket.find_by(id: params[:id])
     if @ticket
@@ -72,6 +74,10 @@ class TicketsController < ApplicationController
     event_id = params[:event_id]
 
     tickets = Ticket.per_event(event_id).joins(:status)
+
+      # Depurador para verificar los tickets encontrados
+      puts tickets.inspect
+      puts tickets.where(statuses: { name: "available" }).count
 
     if tickets.exists?
       render json: {
