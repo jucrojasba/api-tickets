@@ -19,7 +19,7 @@ class Ticket < ApplicationRecord
   before_create :set_default_status
 
   def self.get_data(event_id)
-    @data ||= NetService.get_resource("api/v1/events/#{event_id}")
+    @data ||= NetService.get_resource("/events/#{event_id}.json")
   end
 
   attr_accessor :event_data
