@@ -1,7 +1,9 @@
-class TicketsController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: [ :update_status ]
 
-  # GET /tickets/:ticket_id/logs
+require_relative "../../app/controllers/tickets_controller"
+
+class TicketsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [ :update_status, :create ]
+
   def logs
     @ticket = Ticket.find_by(id: params[:id])
     if @ticket
@@ -57,10 +59,37 @@ class TicketsController < ApplicationController
     end
   end
 
+  # GET events/:event_id/tickets/:quantity
+  def reserve_tickets
+    event_id = params[:event_id]
+    quantity = params[:quantity]
+    tickets = Ticket.giving_ticket_avaliables(event_id, quantity, "available")
+
+    if quantity.to_i <= tickets.count()
+
+      if tickets.exists?
+        ticket_data = tickets.map { |ticket| { id: ticket.id, serial: ticket.serial_ticket} }
+
+        render json: {
+          event_id: event_id,
+          tickets: ticket_data
+        }, status: :ok
+      end
+    else
+      render json: { error: "not enough tickets" }, status: :range_not_satisfiable
+
+    end
+  end
+
+
   def summary
     event_id = params[:event_id]
 
     tickets = Ticket.per_event(event_id).joins(:status)
+
+      # Depurador para verificar los tickets encontrados
+      puts tickets.inspect
+      puts tickets.where(statuses: { name: "available" }).count
 
     if tickets.exists?
       render json: {
@@ -95,17 +124,20 @@ class TicketsController < ApplicationController
       return
     end
 
+    tickets_created = []
     ticket_quantity.times do
-      ticket = Ticket.new(event_id: event_id)
-
+      ticket = Ticket.new(
+        event_id: event_id,
+        event_data: @ticket_data["data"]
+      )
       if ticket.save
-        # Optionally, you can log each created ticket or any other logic you want
+        tickets_created << ticket
       else
         render json: { errors: ticket.errors.full_messages }, status: :unprocessable_entity
         return
       end
     end
 
-    render json: { message: "#{ticket_quantity} tickets created successfully", event_id: event_id }, status: :created
+    render json: { message: "#{tickets_created.size} tickets created successfully", tickets: tickets_created }, status: :created
   end
 end

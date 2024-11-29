@@ -1,264 +1,28 @@
 {
   "RSpec": {
     "coverage": {
-      "C:/Users/Personal/Documents/Learning stuff/Ruby/api-tickets/app/helpers/api/v1/ticket_helper.rb": {
+      "C:/Users/mlbar/Downloads/Juan Camilo/api-tickets/TicketApp/app/helpers/api/v1/ticket_helper.rb": {
         "lines": [
           1,
           null
         ],
         "branches": {}
       },
-      "C:/Users/Personal/Documents/Learning stuff/Ruby/api-tickets/app/helpers/application_helper.rb": {
+      "C:/Users/mlbar/Downloads/Juan Camilo/api-tickets/TicketApp/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ],
         "branches": {}
       },
-      "C:/Users/Personal/Documents/Learning stuff/Ruby/api-tickets/app/helpers/tickets_helper.rb": {
+      "C:/Users/mlbar/Downloads/Juan Camilo/api-tickets/TicketApp/app/helpers/tickets_helper.rb": {
         "lines": [
           1,
           null
         ],
         "branches": {}
-      },
-      "C:/Users/Personal/Documents/Learning stuff/Ruby/api-tickets/app/controllers/tickets_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          1,
-          3,
-          3,
-          2,
-          2,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          null,
-          null,
-          0,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0,
-          null,
-          null,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          0,
-          null,
-          null
-        ],
-        "branches": {
-          "[:if, 0, 7, 4, 22, 7]": {
-            "[:then, 1, 8, 6, 19, 20]": 2,
-            "[:else, 2, 21, 6, 21, 68]": 1
-          },
-          "[:if, 3, 32, 6, 42, 9]": {
-            "[:then, 4, 33, 8, 39, 40]": 0,
-            "[:else, 5, 41, 8, 41, 86]": 0
-          },
-          "[:if, 6, 53, 4, 64, 7]": {
-            "[:then, 7, 54, 6, 61, 20]": 0,
-            "[:else, 8, 63, 6, 63, 61]": 0
-          },
-          "[:if, 9, 73, 4, 76, 7]": {
-            "[:then, 10, 74, 6, 75, 12]": 0,
-            "[:else, 11, 73, 4, 76, 7]": 0
-          },
-          "[:if, 12, 81, 4, 84, 7]": {
-            "[:then, 13, 82, 6, 83, 12]": 0,
-            "[:else, 14, 81, 4, 84, 7]": 0
-          },
-          "[:if, 15, 89, 6, 94, 9]": {
-            "[:then, 16, 89, 20, 89, 20]": 0,
-            "[:else, 17, 92, 8, 93, 14]": 0
-          }
-        }
-      },
-      "C:/Users/Personal/Documents/Learning stuff/Ruby/api-tickets/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          null
-        ],
-        "branches": {}
-      },
-      "C:/Users/Personal/Documents/Learning stuff/Ruby/api-tickets/app/models/ticket.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          0,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null
-        ],
-        "branches": {
-          "[:\"&.\", 0, 21, 23, 21, 48]": {
-            "[:then, 1, 21, 23, 21, 48]": 0,
-            "[:else, 2, 21, 23, 21, 48]": 0
-          }
-        }
-      },
-      "C:/Users/Personal/Documents/Learning stuff/Ruby/api-tickets/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ],
-        "branches": {}
-      },
-      "C:/Users/Personal/Documents/Learning stuff/Ruby/api-tickets/app/models/ticket_log.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          null
-        ],
-        "branches": {}
-      },
-      "C:/Users/Personal/Documents/Learning stuff/Ruby/api-tickets/app/models/status.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          0,
-          null,
-          0,
-          null,
-          0,
-          null,
-          0,
-          null,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null
-        ],
-        "branches": {
-          "[:case, 0, 8, 4, 19, 7]": {
-            "[:when, 1, 10, 6, 10, 54]": 0,
-            "[:when, 2, 12, 6, 12, 54]": 0,
-            "[:when, 3, 14, 6, 14, 11]": 0,
-            "[:when, 4, 16, 6, 16, 11]": 0,
-            "[:else, 5, 18, 6, 18, 11]": 0
-          }
-        }
       }
     },
-    "timestamp": 1732804860
+    "timestamp": 1732882178
   }
 }
