@@ -99,7 +99,7 @@ rails s
 | `id`      | `string` | **Required**. ticket to patch |
 
 #### Requieres
-body whit id of status :
+body with id of status :
 | Parameter | Type     | 
 | :-------- | :------- | 
 | `1`      | `available` |
@@ -107,7 +107,12 @@ body whit id of status :
 | `3`      | `sold` |
 | `4`      | `canceled` |
 
-
+Example of body request :
+```
+{
+    "new_status_id": 2
+}
+```
 
 
 
