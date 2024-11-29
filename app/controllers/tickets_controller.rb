@@ -109,41 +109,48 @@ class TicketsController < ApplicationController
 
   def create
     event_id = params[:event_id]
-    @ticket_data = Ticket.get_data(event_id)
+    quantity = params[:quantity].to_i
 
-    # Verificar si no se encuentran datos del evento
-    if @ticket_data.nil?
+    # Verificar si el evento existe
+    event_data = Ticket.get_data(event_id)
+    if event_data.nil?
       return render json: { error: "Event not found" }, status: :not_found
     end
 
-    ticket_quantity = @ticket_data["tickets_quantity"].to_i
+    max_tickets = event_data["tickets_quantity"].to_i
 
-
-    puts "Ticket quantity: #{ticket_quantity}"
-
-    # Consulta la cantidad actual de tickets generados para este evento
+    # Consultar la cantidad actual de tickets generados para el evento
     current_ticket_count = Ticket.where(event_id: event_id).count
 
-    puts "Current ticket count: #{current_ticket_count}"
+    # Calcular la cantidad de tickets a crear
+    remaining_tickets = max_tickets - current_ticket_count
 
-    # Verifica si la cantidad de tickets excede la capacidad
-    if current_ticket_count >= ticket_quantity
-      return render json: { error: "Capacity exceeded. Cannot generate more tickets." }, status: :unprocessable_entity
+    if remaining_tickets <= 0
+      return render json: { message: "No tickets available to create.", current_tickets: current_ticket_count }, status: :unprocessable_entity
     end
-    tickets = []
 
-    ticket_quantity.times do
+    tickets_to_create =  remaining_tickets
+
+    created_tickets = []
+
+    # Crear los tickets y logs asociados
+    tickets_to_create.times do
       ticket = Ticket.create(event_id: event_id)
-
-      if ticket.errors.any?
-        puts "Error al crear el ticket: #{ticket.errors.full_messages.join(', ')}"
-        return render json: { errors: ticket.errors.full_messages, ticket: ticket }, status: :unprocessable_entity
+      if ticket.persisted?
+        created_tickets << ticket
+        TicketLog.create(ticket_id: ticket.id, status_id: ticket.status_id)
       end
-
-      tickets << ticket
     end
 
-    # Solo se llama a render una vez después de crear todos los tickets
-    render json: { message: "#{ticket_quantity} tickets created successfully", tickets: tickets }, status: :created
+    # Responder con el detalle de la creación
+    render json: {
+      message: "Tickets created successfully",
+      details: {
+        previously_existing_tickets: current_ticket_count,
+        tickets_created: created_tickets.size,
+        total_tickets_now: current_ticket_count + created_tickets.size
+      },
+      tickets: created_tickets.map { |t| { id: t.id, event_id: t.event_id } }
+    }, status: :created
   end
 end
