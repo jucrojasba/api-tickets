@@ -1,0 +1,22 @@
+databases:
+    name: mysite
+    databasesName: mysite
+    user: mysite
+    plan: free
+
+services:
+    type: web
+    name: riwiCoffee
+    runtime: ruby
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec rails server"
+    envVars:
+      key: DATABASE_URL
+      fromDatabase:
+        name: mysite
+        property: connectionString
+      key: RAILS_MASTER_KEY
+      sync:false- key: WEB_CONCURRENCY
+      Value: 2
+DATABASE_URL: <%= ENV['DATABASE_URL'] %>
