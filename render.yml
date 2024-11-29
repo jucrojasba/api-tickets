@@ -1,7 +1,7 @@
 databases:
     name: PG-ticket-system
-    databasesName: ticket_api
-    user: ticket_api_user
+    databasesName: attendee
+    user: attendee_user
     plan: free
 
 services:
@@ -15,6 +15,6 @@ services:
         fromDatabase:
           name: mysite
           property: connectionString
-        key: 94db1db7a80f73917a43bc39da9b0456
+        key: 8ebef870580bb390b815f11391488490
         sync:false- key: WEB_CONCURRENCY
-        Value: 2
+        Value: 5
