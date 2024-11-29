@@ -40,7 +40,19 @@ class TicketsController < ApplicationController
 
         render json: ticket, status: :ok
       else
-        render json: { error: "Invalid status change" }, status: :unprocessable_entity
+        error_message = case ticket.status.name
+        when "available"
+                          "Ticket status can only be updated to 'reserved' or 'sold'"
+        when "reserved"
+                          "Ticket status can only be updated to 'sold' or 'canceled'"
+        when "sold"
+                          "Ticket status cannot be updated from 'sold'"
+        when "canceled"
+                          "Ticket status cannot be updated from 'canceled'"
+        else
+                          "Invalid status change"
+        end
+        render json: { error: error_message }, status: :unprocessable_entity
       end
     rescue => e
       render json: { error: e.message }, status: :internal_server_error
