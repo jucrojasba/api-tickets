@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   # optional rout for the moment attached to changes
 
   get "events/:event_id/tickets/summary", to: "tickets#summary"
+  get "events/:event_id/tickets/:quantity", to: "tickets#reserve_tickets", defaults: { format: :json }
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -23,7 +25,8 @@ Rails.application.routes.draw do
     get :logs, on: :member # Esto genera la ruta GET /tickets/:ticket_id/logs
   end
 
-  patch "tickets/:ticket_id/status", to: "ticket#update_status"
+  patch "tickets/:ticket_id/status", to: "tickets#update_status"
 
   post "api/v1/events/:event_id/tickets", to: "tickets#create"
 end
+

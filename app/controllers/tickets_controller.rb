@@ -2,9 +2,7 @@
 require_relative "../../app/controllers/tickets_controller"
 
 class TicketsController < ApplicationController
-  # GET /tickets/:ticket_id/logs
-
-  skip_before_action :verify_authenticity_token, only: [ :create ]
+  skip_before_action :verify_authenticity_token, only: [ :update_status, :create ]
 
   def logs
     @ticket = Ticket.find_by(id: params[:id])
@@ -25,33 +23,52 @@ class TicketsController < ApplicationController
       render json: { error: "Ticket not found" }, status: :not_found
     end
   end
+
+
   # PATCH/PUT /tickets/:ticket_id/update_status
   def update_status
-    ticket = Ticket.find_by(id: params[:ticket_id])
-    new_status = Status.find_by(id: params[:new_status_id])
+    ticket = Ticket.find(params[:ticket_id])
+    new_status = Status.find(params[:new_status_id])
 
-    if ticket.nil?
-      render json: { error: "Ticket not found" }, status: :not_found
-      return
-    end
+    begin
+      if ticket.status.can_transition_to?(new_status)
+        ticket.status = new_status
+        ticket.save!
 
-    if new_status.nil?
-      render json: { error: "Status not found" }, status: :not_found
-      return
-    end
+        ticket_logs_controller = TicketLogsController.new
+        ticket_logs_controller.create_log(ticket, new_status)
 
-    if can_update_status?(ticket, new_status)
-      ticket.status = new_status
-      if ticket.save
-        log_status_change(ticket, new_status)
         render json: ticket, status: :ok
       else
-        render json: { errors: ticket.errors.full_messages }, status: :unprocessable_entity
+        render json: { error: "Invalid status change" }, status: :unprocessable_entity
       end
-    else
-      render json: { error: "Invalid status change" }, status: :bad_request
+    rescue => e
+      render json: { error: e.message }, status: :internal_server_error
     end
   end
+
+  # GET events/:event_id/tickets/:quantity
+  def reserve_tickets
+    event_id = params[:event_id]
+    quantity = params[:quantity]
+    tickets = Ticket.giving_ticket_avaliables(event_id, quantity, "available")
+
+    if quantity.to_i <= tickets.count()
+
+      if tickets.exists?
+        ticket_data = tickets.map { |ticket| { id: ticket.id, serial: ticket.serial_ticket} }
+
+        render json: {
+          event_id: event_id,
+          tickets: ticket_data
+        }, status: :ok
+      end
+    else
+      render json: { error: "not enough tickets" }, status: :range_not_satisfiable
+
+    end
+  end
+
 
   def summary
     event_id = params[:event_id]
@@ -95,42 +112,20 @@ class TicketsController < ApplicationController
       return
     end
 
+    tickets_created = []
     ticket_quantity.times do
-      ticket = Ticket.new(event_id: event_id)
-
+      ticket = Ticket.new(
+        event_id: event_id,
+        event_data: @ticket_data["data"]
+      )
       if ticket.save
-        # Optionally, you can log each created ticket or any other logic you want
+        tickets_created << ticket
       else
         render json: { errors: ticket.errors.full_messages }, status: :unprocessable_entity
         return
       end
     end
 
-    render json: { message: "#{ticket_quantity} tickets created successfully", event_id: event_id }, status: :created
-  end
-
-
-
-  private
-  def can_update_status?(ticket, new_status)
-    return false if ticket.status == new_status
-
-    valid_transitions = {
-      "New" => [ "Open" ],
-      "Open" => [ "InProgress", "Resolved", "Cancelled" ],
-      "InProgress" => [ "Resolved", "Cancelled" ],
-      "Resolved" => [ "Closed", "Reserved" ],
-      "Closed" => [ "Available", "Sold" ],
-      "Cancelled" => [],
-      "Reserved" => [ "Sold" ],
-      "Available" => [ "Reserved", "Sold" ],
-      "Sold" => []
-    }
-
-    valid_transitions[ticket.status.name]&.include?(new_status.name) || false
-  end
-
-  def log_status_change(ticket, new_status)
-    ticket.ticket_logs.create(state: new_status.name, created_at: Time.current)
+    render json: { message: "#{tickets_created.size} tickets created successfully", tickets: tickets_created }, status: :created
   end
 end
