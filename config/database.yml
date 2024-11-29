@@ -12,7 +12,7 @@ development:
   database: api_tickets_development
 
 test:
-  <<:default
+  <<: default
   database: api_tickets_test
 
 production:
