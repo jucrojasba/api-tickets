@@ -4,6 +4,7 @@
 This api is made for manage ticket creation
 
 
+https://api-tickets-cbbg.onrender.com/
 
 
 ## Authors
@@ -82,7 +83,7 @@ rails s
 | `id`      | `string` | **Required**. Id of item to fetch |
 
 ```http
-  POST /api/v1/events/:event_id/tickets
+  POST /events/:event_id/tickets
 ```
 
 | Parameter | Type     | Description                       |
@@ -98,7 +99,7 @@ rails s
 | `id`      | `string` | **Required**. ticket to patch |
 
 #### Requieres
-body whit id of status :
+body with id of status :
 | Parameter | Type     | 
 | :-------- | :------- | 
 | `1`      | `available` |
@@ -106,7 +107,12 @@ body whit id of status :
 | `3`      | `sold` |
 | `4`      | `canceled` |
 
-
+Example of body request :
+```
+{
+    "new_status_id": 2
+}
+```
 
 
 
