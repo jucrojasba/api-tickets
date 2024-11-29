@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_11_26_171139) do
+ActiveRecord::Schema[7.2].define(version: 2024_11_28_171237) do
   create_table "statuses", force: :cascade do |t|
     t.string "name", limit: 50, null: false
     t.datetime "created_at", null: false
@@ -38,6 +38,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_26_171139) do
   end
 
   add_foreign_key "ticket_logs", "statuses"
-  add_foreign_key "ticket_logs", "tickets"
+  add_foreign_key "ticket_logs", "tickets", on_delete: :cascade
   add_foreign_key "tickets", "statuses"
 end
