@@ -111,31 +111,29 @@ class TicketsController < ApplicationController
     event_id = params[:event_id]
     @ticket_data = Ticket.get_data(event_id)
 
-
-
-
+    # Verificar si no se encuentran datos del evento
     if @ticket_data.nil?
       return render json: { error: "Event not found" }, status: :not_found
     end
 
     ticket_quantity = @ticket_data["tickets_quantity"].to_i
-    event_capacity = @ticket_data["capacity"].to_i
 
-    if ticket_quantity > event_capacity
-      return render json: { error: "Capacity exceeded" }, status: :unprocessable_entity
+
+    puts "Ticket quantity: #{ticket_quantity}"
+
+    # Consulta la cantidad actual de tickets generados para este evento
+    current_ticket_count = Ticket.where(event_id: event_id).count
+
+    puts "Current ticket count: #{current_ticket_count}"
+
+    # Verifica si la cantidad de tickets excede la capacidad
+    if current_ticket_count >= ticket_quantity
+      return render json: { error: "Capacity exceeded. Cannot generate more tickets." }, status: :unprocessable_entity
     end
-
     tickets = []
 
     ticket_quantity.times do
       ticket = Ticket.create(event_id: event_id)
-
-      current_ticket_count = Ticket.where(event_id: event_id).count
-
-      # Verifica si la cantidad de tickets excede la capacidad
-      if current_ticket_count + ticket_quantity > event_capacity
-        return render json: { error: "Capacity exceeded. Cannot generate more tickets." }, status: :unprocessable_entity
-      end
 
       if ticket.errors.any?
         puts "Error al crear el ticket: #{ticket.errors.full_messages.join(', ')}"
@@ -143,10 +141,9 @@ class TicketsController < ApplicationController
       end
 
       tickets << ticket
-      puts "Ticket creado con serial_ticket: #{ticket.serial_ticket}"
     end
 
-    # Once all tickets are created successfully
+    # Solo se llama a render una vez después de crear todos los tickets
     render json: { message: "#{ticket_quantity} tickets created successfully", tickets: tickets }, status: :created
   end
 end
