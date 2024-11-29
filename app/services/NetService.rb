@@ -3,7 +3,7 @@ require "uri"
 require "json"
 
 class NetService
-  BASE_URL = "http://192.168.89.16:3000"
+  BASE_URL = "https://rails-event-system.onrender.com"
 
   def self.get_resource(path)
     url = URI.join(BASE_URL, path)
