@@ -2,7 +2,7 @@
 require_relative "../../app/controllers/tickets_controller"
 
 class TicketsController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: [ :update_status, :create ]
+  # skip_before_action :verify_authenticity_token, only: [ :update_status, :create ]
 
   def logs
     @ticket = Ticket.find_by(id: params[:id])
@@ -68,7 +68,7 @@ class TicketsController < ApplicationController
     if quantity.to_i <= tickets.count()
 
       if tickets.exists?
-        ticket_data = tickets.map { |ticket| { id: ticket.id, serial: ticket.serial_ticket} }
+        ticket_data = tickets.map { |ticket| { id: ticket.id, serial: ticket.serial_ticket } }
 
         render json: {
           event_id: event_id,
