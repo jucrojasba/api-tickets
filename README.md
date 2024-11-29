@@ -1,4 +1,3 @@
-# API Tikect
 
 # Tickets : API
 
@@ -96,10 +95,17 @@ rails s
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. ticket for  |
+| `id`      | `string` | **Required**. ticket to patch |
 
 #### Requieres
-body whit id of status 
+body whit id of status :
+| Parameter | Type     | 
+| :-------- | :------- | 
+| `1`      | `available` |
+| `2`      | `reserved` |
+| `3`      | `sold` |
+| `4`      | `canceled` |
+
 
 
 
@@ -111,6 +117,6 @@ body whit id of status
 
 This project is used by the following companies:
 
-- Company 1
-- Company 2
+- [Event-system](https://github.com/Riwi-io-Medellin/Rails-event-system )
+
 
