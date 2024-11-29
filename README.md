@@ -83,7 +83,7 @@ rails s
 | `id`      | `string` | **Required**. Id of item to fetch |
 
 ```http
-  POST /api/v1/events/:event_id/tickets
+  POST /events/:event_id/tickets
 ```
 
 | Parameter | Type     | Description                       |
