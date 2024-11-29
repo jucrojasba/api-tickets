@@ -1,4 +1,4 @@
-·!/usr/bin/env bash# exit on error
+#!/usr/bin/env bash
 set -o errexit
 
 bundle install
