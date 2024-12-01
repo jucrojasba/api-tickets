@@ -13,7 +13,10 @@ class Ticket < ApplicationRecord
   #  scope for search of the controller
   scope :per_event, ->(event_id) { Ticket.where(event_id: event_id) }
   # Ex:- scope :active, -> {where(:active => true)}
-
+  def self.giving_ticket_avaliables(event_id, quantity, state)
+    @response= Ticket.per_event(event_id).joins(:status).where(statuses: { name: state }).limit(quantity)
+    @response
+  end
 
 
   def self.get_data(event_id)
