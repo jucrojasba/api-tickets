@@ -26,4 +26,3 @@ class TicketsControllerTest < ActionDispatch::IntegrationTest
     assert_not_equal Status.find_by(name: "sold").id, @ticket.status_id
   end
 end
-

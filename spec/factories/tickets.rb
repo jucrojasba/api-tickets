@@ -4,6 +4,6 @@ FactoryBot.define do
     event_id { 1 } # Valor por defecto
     expire_date { Time.now + 1.day } # Fecha de vencimiento
     serial_ticket { SecureRandom.hex(8) } # Identificador único
-    association :status # Relación con el modelo Status
+    association :status, factory: :status, strategy: :create #  Relación con el modelo Status
   end
 end

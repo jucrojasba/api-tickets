@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.13.1/application.js' type='text/javascript'></script>
     <link href='./assets/0.13.1/application.css' media='screen, projection, print' rel='stylesheet' type='text/css' />
-    <link rel="icon" type="image/png" href="./assets/0.13.1/favicon_green.png" />
+    <link rel="icon" type="image/png" href="./assets/0.13.1/favicon_red.png" />
   </head>
 
   <body data-branch-coverage=true>
@@ -13,7 +13,7 @@
       <img src="./assets/0.13.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2024-11-29T07:09:38-05:00">2024-11-29T07:09:38-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2024-12-02T07:33:50-05:00">2024-12-02T07:33:50-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -21,15 +21,15 @@
   <h2>
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
-      <span class="green">
-  100.0%
+      <span class="red">
+  61.36%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
-       <span class="yellow">
-         1.0
+       <span class="green">
+         46.73
        </span>
     </span> hits/line
     )
@@ -38,26 +38,26 @@
   <a name="AllFiles"></a>
 
   <div>
-    <b>3</b> files in total.
+    <b>11</b> files in total.
   </div>
 
   <div class="t-line-summary">
-    <b>3</b> relevant lines,
-    <span class="green"><b>3</b> lines covered</span> and
-    <span class="red"><b>0</b> lines missed. </span>
-    (<span class="green">
-  100.0%
+    <b>132</b> relevant lines,
+    <span class="green"><b>81</b> lines covered</span> and
+    <span class="red"><b>51</b> lines missed. </span>
+    (<span class="red">
+  61.36%
 </span>
 )
   </div>
 
   
     <div class="t-branch-summary">
-      <span><b>0</b> total branches, </span>
-      <span class="green"><b>0</b> branches covered</span> and
-      <span class="red"><b>0</b> branches missed.</span>
-      (<span class="green">
-  100.0%
+      <span><b>29</b> total branches, </span>
+      <span class="green"><b>6</b> branches covered</span> and
+      <span class="red"><b>23</b> branches missed.</span>
+      (<span class="red">
+  20.69%
 </span>
 )
     </div>
@@ -83,6 +83,54 @@
         </tr>
       </thead>
       <tbody>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#02d68d7eb9ba707851434e3c523c7104e7e71127" class="src_link" title="app/controllers/application_controller.rb">app/controllers/application_controller.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">4</td>
+            <td class="cell--number">2</td>
+            <td class="cell--number">2</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.00</td>
+            
+              <td class="green strong cell--number t-file__branch-coverage">100.00 %</td>
+              <td class="cell--number">0</td>
+              <td class="cell--number">0</td>
+              <td class="cell--number">0</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#8a90f770aff906ebe8a989d8be8ff0937b311c20" class="src_link" title="app/controllers/ticket_logs_controller.rb">app/controllers/ticket_logs_controller.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">10</td>
+            <td class="cell--number">3</td>
+            <td class="cell--number">3</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.00</td>
+            
+              <td class="green strong cell--number t-file__branch-coverage">100.00 %</td>
+              <td class="cell--number">0</td>
+              <td class="cell--number">0</td>
+              <td class="cell--number">0</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#9e0b737ca23f8c70fec02e3004280fd11344af0d" class="src_link" title="app/controllers/tickets_controller.rb">app/controllers/tickets_controller.rb</a></td>
+            <td class="red strong cell--number t-file__coverage">48.61 %</td>
+            <td class="cell--number">167</td>
+            <td class="cell--number">72</td>
+            <td class="cell--number">35</td>
+            <td class="cell--number">37</td>
+            <td class="cell--number">0.78</td>
+            
+              <td class="red strong cell--number t-file__branch-coverage">19.05 %</td>
+              <td class="cell--number">21</td>
+              <td class="cell--number">4</td>
+              <td class="cell--number">17</td>
+            
+          </tr>
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#966732900eb2b6a131946de10d5d55738285fa45" class="src_link" title="app/helpers/api/v1/ticket_helper.rb">app/helpers/api/v1/ticket_helper.rb</a></td>
@@ -132,6 +180,86 @@
             
           </tr>
         
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#43c5f7dd7ad674bbb032d7909a60845cea9629a4" class="src_link" title="app/models/application_record.rb">app/models/application_record.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">3</td>
+            <td class="cell--number">2</td>
+            <td class="cell--number">2</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.00</td>
+            
+              <td class="green strong cell--number t-file__branch-coverage">100.00 %</td>
+              <td class="cell--number">0</td>
+              <td class="cell--number">0</td>
+              <td class="cell--number">0</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#ae3ef1a87870d0a2dd775ba4a9706369011a3c12" class="src_link" title="app/models/status.rb">app/models/status.rb</a></td>
+            <td class="red strong cell--number t-file__coverage">63.64 %</td>
+            <td class="cell--number">21</td>
+            <td class="cell--number">11</td>
+            <td class="cell--number">7</td>
+            <td class="cell--number">4</td>
+            <td class="cell--number">0.64</td>
+            
+              <td class="red strong cell--number t-file__branch-coverage">20.00 %</td>
+              <td class="cell--number">5</td>
+              <td class="cell--number">1</td>
+              <td class="cell--number">4</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#e7e9efc3083892e6942d8618ac6c4a67932c6b40" class="src_link" title="app/models/ticket.rb">app/models/ticket.rb</a></td>
+            <td class="red strong cell--number t-file__coverage">62.50 %</td>
+            <td class="cell--number">43</td>
+            <td class="cell--number">24</td>
+            <td class="cell--number">15</td>
+            <td class="cell--number">9</td>
+            <td class="cell--number">86.79</td>
+            
+              <td class="red strong cell--number t-file__branch-coverage">50.00 %</td>
+              <td class="cell--number">2</td>
+              <td class="cell--number">1</td>
+              <td class="cell--number">1</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#e70ce9b6fbe4dfe36ccb954e7e506335eff43398" class="src_link" title="app/models/ticket_log.rb">app/models/ticket_log.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">6</td>
+            <td class="cell--number">4</td>
+            <td class="cell--number">4</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.00</td>
+            
+              <td class="green strong cell--number t-file__branch-coverage">100.00 %</td>
+              <td class="cell--number">0</td>
+              <td class="cell--number">0</td>
+              <td class="cell--number">0</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#0a965da303a345a6db96f664f7d07adb33a486fe" class="src_link" title="db/seeds.rb">db/seeds.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">90.91 %</td>
+            <td class="cell--number">40</td>
+            <td class="cell--number">11</td>
+            <td class="cell--number">10</td>
+            <td class="cell--number">1</td>
+            <td class="cell--number">364.45</td>
+            
+              <td class="red strong cell--number t-file__branch-coverage">0.00 %</td>
+              <td class="cell--number">1</td>
+              <td class="cell--number">0</td>
+              <td class="cell--number">1</td>
+            
+          </tr>
+        
       </tbody>
     </table>
   </div>
@@ -148,6 +276,2477 @@
       </div>
 
       <div class="source_files">
+      
+        <div class="source_table" id="02d68d7eb9ba707851434e3c523c7104e7e71127">
+  <div class="header">
+    <h3>app/controllers/application_controller.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+      <h4>
+        <span class="green">
+  100.0%
+</span>
+
+        branches covered
+      </h4>
+    
+
+    <div class="t-line-summary">
+      <b>2</b> relevant lines.
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+      <div class="t-branch-summary">
+          <span><b>0</b> total branches, </span>
+          <span class="green"><b>0</b> branches covered</span> and
+          <span class="red"><b>0</b> branches missed.</span>
+      </div>
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">class ApplicationController &lt; ActionController::Base</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+
+            
+              
+            
+
+            <code class="ruby">  # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  allow_browser versions: :modern</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="4">
+            
+
+            
+              
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="8a90f770aff906ebe8a989d8be8ff0937b311c20">
+  <div class="header">
+    <h3>app/controllers/ticket_logs_controller.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+      <h4>
+        <span class="green">
+  100.0%
+</span>
+
+        branches covered
+      </h4>
+    
+
+    <div class="t-line-summary">
+      <b>3</b> relevant lines.
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+      <div class="t-branch-summary">
+          <span><b>0</b> total branches, </span>
+          <span class="green"><b>0</b> branches covered</span> and
+          <span class="red"><b>0</b> branches missed.</span>
+      </div>
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">class TicketLogsController &lt; ApplicationController</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="2">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  def create_log(ticket, new_status)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">    TicketLog.create!(</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="4">
+            
+
+            
+              
+            
+
+            <code class="ruby">      ticket: ticket,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="5">
+            
+
+            
+              
+            
+
+            <code class="ruby">      status: new_status,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="6">
+            
+
+            
+              
+            
+
+            <code class="ruby">      created_at: Time.current,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="7">
+            
+
+            
+              
+            
+
+            <code class="ruby">      updated_at: Time.current</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
+            
+
+            
+              
+            
+
+            <code class="ruby">    )</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
+            
+
+            
+              
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
+            
+
+            
+              
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="9e0b737ca23f8c70fec02e3004280fd11344af0d">
+  <div class="header">
+    <h3>app/controllers/tickets_controller.rb</h3>
+    <h4>
+      <span class="red">
+  48.61%
+</span>
+
+      lines covered
+    </h4>
+
+    
+      <h4>
+        <span class="red">
+  19.05%
+</span>
+
+        branches covered
+      </h4>
+    
+
+    <div class="t-line-summary">
+      <b>72</b> relevant lines.
+      <span class="green"><b>35</b> lines covered</span> and
+      <span class="red"><b>37</b> lines missed.</span>
+    </div>
+
+    
+      <div class="t-branch-summary">
+          <span><b>21</b> total branches, </span>
+          <span class="green"><b>4</b> branches covered</span> and
+          <span class="red"><b>17</b> branches missed.</span>
+      </div>
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="1">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="2">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">require_relative &quot;../../app/controllers/tickets_controller&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="3">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="4">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">class TicketsController &lt; ApplicationController</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="5">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  skip_before_action :verify_authenticity_token, only: [ :update_status, :create ]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="6">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  def logs</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="8">
+            
+              <span class="hits">3</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">    @ticket = Ticket.find_by(id: params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="9">
+            
+              <span class="hits">3</span>
+            
+
+            
+              
+                <span class="hits" title="then branch hit 2 times">
+                  then: 2
+                </span>
+              
+            
+
+            <code class="ruby">    if @ticket</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="10">
+            
+              <span class="hits">2</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">      logs = @ticket.ticket_logs.select(:id, :status_id, :created_at, :updated_at)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="11">
+            
+              <span class="hits">2</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">      render json: {</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+
+            
+              
+            
+
+            <code class="ruby">        ticket_id: @ticket.id,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+
+            
+              
+            
+
+            <code class="ruby">        history: logs.map do |log|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="14">
+            
+
+            
+              
+            
+
+            <code class="ruby">          {</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="15">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">            id: log.id,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+
+            
+              
+            
+
+            <code class="ruby">            Status: log.status.name,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
+            
+
+            
+              
+            
+
+            <code class="ruby">            changed_at: log.created_at,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
+            
+
+            
+              
+            
+
+            <code class="ruby">            event_id: @ticket.event_id</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="19">
+            
+
+            
+              
+            
+
+            <code class="ruby">          }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="20">
+            
+
+            
+              
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="21">
+            
+
+            
+              
+            
+
+            <code class="ruby">      }, status: :ok</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="22">
+            
+
+            
+              
+                <span class="hits" title="else branch hit 1 times">
+                  else: 1
+                </span>
+              
+            
+
+            <code class="ruby">    else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="23">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">      render json: { error: &quot;Ticket not found&quot; }, status: :not_found</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="24">
+            
+
+            
+              
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="25">
+            
+
+            
+              
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="26">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="27">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="28">
+            
+
+            
+              
+            
+
+            <code class="ruby">  # PATCH/PUT /tickets/:ticket_id/update_status</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="29">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  def update_status</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="30">
+            
+              <span class="hits">2</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">    ticket = Ticket.find(params[:ticket_id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="31">
+            
+              <span class="hits">2</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">    new_status = Status.find(params[:new_status_id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="32">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="33">
+            
+
+            
+              
+            
+
+            <code class="ruby">    begin</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="34">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+                <span class="hits" title="then branch hit 1 times">
+                  then: 1
+                </span>
+              
+            
+
+            <code class="ruby">      if ticket.status.can_transition_to?(new_status)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="35">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">        ticket.status = new_status</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="36">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">        ticket.save!</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="37">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="38">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">        ticket_logs_controller = TicketLogsController.new</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="39">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">        ticket_logs_controller.create_log(ticket, new_status)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="40">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="41">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">        render json: ticket, status: :ok</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed-branch" data-hits="" data-linenumber="42">
+            
+
+            
+              
+                <span class="hits" title="else branch hit 0 times">
+                  else: 0
+                </span>
+              
+            
+
+            <code class="ruby">      else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="43">
+            
+
+            
+              
+            
+
+            <code class="ruby">        error_message = case ticket.status.name</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed-branch" data-hits="" data-linenumber="44">
+            
+
+            
+              
+                <span class="hits" title="when branch hit 0 times">
+                  when: 0
+                </span>
+              
+            
+
+            <code class="ruby">        when &quot;available&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="45">
+            
+
+            
+              
+            
+
+            <code class="ruby">                          &quot;Ticket status can only be updated to &#39;reserved&#39; or &#39;sold&#39;&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed-branch" data-hits="" data-linenumber="46">
+            
+
+            
+              
+                <span class="hits" title="when branch hit 0 times">
+                  when: 0
+                </span>
+              
+            
+
+            <code class="ruby">        when &quot;reserved&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="47">
+            
+
+            
+              
+            
+
+            <code class="ruby">                          &quot;Ticket status can only be updated to &#39;sold&#39; or &#39;canceled&#39;&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed-branch" data-hits="" data-linenumber="48">
+            
+
+            
+              
+                <span class="hits" title="when branch hit 0 times">
+                  when: 0
+                </span>
+              
+            
+
+            <code class="ruby">        when &quot;sold&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="49">
+            
+
+            
+              
+            
+
+            <code class="ruby">                          &quot;Ticket status cannot be updated from &#39;sold&#39;&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed-branch" data-hits="" data-linenumber="50">
+            
+
+            
+              
+                <span class="hits" title="when branch hit 0 times">
+                  when: 0
+                </span>
+              
+            
+
+            <code class="ruby">        when &quot;canceled&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="51">
+            
+
+            
+              
+            
+
+            <code class="ruby">                          &quot;Ticket status cannot be updated from &#39;canceled&#39;&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed-branch" data-hits="" data-linenumber="52">
+            
+
+            
+              
+                <span class="hits" title="else branch hit 0 times">
+                  else: 0
+                </span>
+              
+            
+
+            <code class="ruby">        else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="53">
+            
+
+            
+              
+            
+
+            <code class="ruby">                          &quot;Invalid status change&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="54">
+            
+
+            
+              
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="55">
+            
+
+            
+              
+            
+
+            <code class="ruby">        render json: { error: error_message }, status: :unprocessable_entity</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="56">
+            
+
+            
+              
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="57">
+            
+
+            
+              
+            
+
+            <code class="ruby">    rescue =&gt; e</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="58">
+            
+
+            
+              
+            
+
+            <code class="ruby">      render json: { error: e.message }, status: :internal_server_error</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="59">
+            
+
+            
+              
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="60">
+            
+
+            
+              
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="61">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="62">
+            
+
+            
+              
+            
+
+            <code class="ruby">  # GET events/:event_id/tickets/:quantity</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="63">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  def reserve_tickets</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="64">
+            
+
+            
+              
+            
+
+            <code class="ruby">    event_id = params[:event_id]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="65">
+            
+
+            
+              
+            
+
+            <code class="ruby">    quantity = params[:quantity]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="66">
+            
+
+            
+              
+            
+
+            <code class="ruby">    tickets = Ticket.giving_ticket_avaliables(event_id, quantity, &quot;available&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="67">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="68">
+            
+
+            
+              
+            
+
+            <code class="ruby">    if quantity.to_i &lt;= tickets.count()</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed-branch" data-hits="" data-linenumber="69">
+            
+
+            
+              
+                <span class="hits" title="then branch hit 0 times">
+                  then: 0
+                </span>
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed-branch" data-hits="0" data-linenumber="70">
+            
+
+            
+              
+                <span class="hits" title="then branch hit 0 times">
+                  then: 0
+                </span>
+              
+                <span class="hits" title="else branch hit 0 times">
+                  else: 0
+                </span>
+              
+            
+
+            <code class="ruby">      if tickets.exists?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="71">
+            
+
+            
+              
+            
+
+            <code class="ruby">        ticket_data = tickets.map { |ticket| { id: ticket.id, serial: ticket.serial_ticket } }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="72">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="73">
+            
+
+            
+              
+            
+
+            <code class="ruby">        render json: {</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="74">
+            
+
+            
+              
+            
+
+            <code class="ruby">          event_id: event_id,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="75">
+            
+
+            
+              
+            
+
+            <code class="ruby">          tickets: ticket_data</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="76">
+            
+
+            
+              
+            
+
+            <code class="ruby">        }, status: :ok</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="77">
+            
+
+            
+              
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed-branch" data-hits="" data-linenumber="78">
+            
+
+            
+              
+                <span class="hits" title="else branch hit 0 times">
+                  else: 0
+                </span>
+              
+            
+
+            <code class="ruby">    else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="79">
+            
+
+            
+              
+            
+
+            <code class="ruby">      render json: { error: &quot;not enough tickets&quot; }, status: :range_not_satisfiable</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="80">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="81">
+            
+
+            
+              
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="82">
+            
+
+            
+              
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="83">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="84">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="85">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  def summary</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="86">
+            
+              <span class="hits">2</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">    event_id = params[:event_id]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="87">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="88">
+            
+              <span class="hits">2</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">    tickets = Ticket.per_event(event_id).joins(:status)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="89">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="90">
+            
+
+            
+              
+            
+
+            <code class="ruby">      # Depurador para verificar los tickets encontrados</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="91">
+            
+              <span class="hits">2</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">      puts tickets.inspect</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="92">
+            
+              <span class="hits">2</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">      puts tickets.where(statuses: { name: &quot;available&quot; }).count</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="93">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="94">
+            
+              <span class="hits">2</span>
+            
+
+            
+              
+                <span class="hits" title="then branch hit 2 times">
+                  then: 2
+                </span>
+              
+            
+
+            <code class="ruby">    if tickets.exists?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="95">
+            
+              <span class="hits">2</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">      render json: {</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="96">
+            
+
+            
+              
+            
+
+            <code class="ruby">        event_id: event_id,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="97">
+            
+
+            
+              
+            
+
+            <code class="ruby">        available_tickets: tickets.where(statuses: { name: &quot;available&quot; }).count,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="98">
+            
+
+            
+              
+            
+
+            <code class="ruby">        reserved_tickets: tickets.where(statuses: { name: &quot;reserved&quot; }).count,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="99">
+            
+
+            
+              
+            
+
+            <code class="ruby">        sold_tickets: tickets.where(statuses: { name: &quot;sold&quot; }).count,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="100">
+            
+
+            
+              
+            
+
+            <code class="ruby">        canceled_tickets: tickets.where(statuses: { name: &quot;canceled&quot; }).count,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="101">
+            
+
+            
+              
+            
+
+            <code class="ruby">        total_tickets: tickets.count</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="102">
+            
+
+            
+              
+            
+
+            <code class="ruby">      }, status: :ok</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed-branch" data-hits="" data-linenumber="103">
+            
+
+            
+              
+                <span class="hits" title="else branch hit 0 times">
+                  else: 0
+                </span>
+              
+            
+
+            <code class="ruby">    else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="104">
+            
+
+            
+              
+            
+
+            <code class="ruby">      render json: { error: &quot;Not event&quot; }, status: :not_found</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="105">
+            
+
+            
+              
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="106">
+            
+
+            
+              
+            
+
+            <code class="ruby">  rescue ActiveRecord::RecordNotFound</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="107">
+            
+
+            
+              
+            
+
+            <code class="ruby">    render json: { error: &quot;Event not found&quot; }, status: :not_found</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="108">
+            
+
+            
+              
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="109">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="110">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  def create</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="111">
+            
+
+            
+              
+            
+
+            <code class="ruby">    event_id = params[:event_id]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="112">
+            
+
+            
+              
+            
+
+            <code class="ruby">    quantity = params[:quantity].to_i</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="113">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="114">
+            
+
+            
+              
+            
+
+            <code class="ruby">    # Verificar si el evento existe</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="115">
+            
+
+            
+              
+            
+
+            <code class="ruby">    event_data = Ticket.get_data(event_id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed-branch" data-hits="0" data-linenumber="116">
+            
+
+            
+              
+                <span class="hits" title="then branch hit 0 times">
+                  then: 0
+                </span>
+              
+                <span class="hits" title="else branch hit 0 times">
+                  else: 0
+                </span>
+              
+            
+
+            <code class="ruby">    if event_data.nil?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="117">
+            
+
+            
+              
+            
+
+            <code class="ruby">      return render json: { error: &quot;Event not found&quot; }, status: :not_found</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="118">
+            
+
+            
+              
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="119">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="120">
+            
+
+            
+              
+            
+
+            <code class="ruby">    max_tickets = event_data[&quot;tickets_quantity&quot;].to_i</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="121">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="122">
+            
+
+            
+              
+            
+
+            <code class="ruby">    # Consultar la cantidad actual de tickets generados para el evento</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="123">
+            
+
+            
+              
+            
+
+            <code class="ruby">    current_ticket_count = Ticket.where(event_id: event_id).count</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="124">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="125">
+            
+
+            
+              
+            
+
+            <code class="ruby">    # Calcular la cantidad de tickets a crear</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="126">
+            
+
+            
+              
+            
+
+            <code class="ruby">    remaining_tickets = max_tickets - current_ticket_count</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="127">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed-branch" data-hits="0" data-linenumber="128">
+            
+
+            
+              
+                <span class="hits" title="then branch hit 0 times">
+                  then: 0
+                </span>
+              
+                <span class="hits" title="else branch hit 0 times">
+                  else: 0
+                </span>
+              
+            
+
+            <code class="ruby">    if remaining_tickets &lt;= 0</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="129">
+            
+
+            
+              
+            
+
+            <code class="ruby">      return render json: { message: &quot;No tickets available to create.&quot;, current_tickets: current_ticket_count }, status: :unprocessable_entity</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="130">
+            
+
+            
+              
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="131">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="132">
+            
+
+            
+              
+            
+
+            <code class="ruby">    tickets_to_create =  remaining_tickets</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="133">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="134">
+            
+
+            
+              
+            
+
+            <code class="ruby">    created_tickets = []</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="135">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="136">
+            
+
+            
+              
+            
+
+            <code class="ruby">    # Crear los tickets y logs asociados</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="137">
+            
+
+            
+              
+            
+
+            <code class="ruby">    tickets_to_create.times do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="138">
+            
+
+            
+              
+            
+
+            <code class="ruby">      ticket = Ticket.create(event_id: event_id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed-branch" data-hits="0" data-linenumber="139">
+            
+
+            
+              
+                <span class="hits" title="then branch hit 0 times">
+                  then: 0
+                </span>
+              
+                <span class="hits" title="else branch hit 0 times">
+                  else: 0
+                </span>
+              
+            
+
+            <code class="ruby">      if ticket.persisted?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="140">
+            
+
+            
+              
+            
+
+            <code class="ruby">        created_tickets &lt;&lt; ticket</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="141">
+            
+
+            
+              
+            
+
+            <code class="ruby">        TicketLog.create(ticket_id: ticket.id, status_id: ticket.status_id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="142">
+            
+
+            
+              
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="143">
+            
+
+            
+              
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="144">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="145">
+            
+
+            
+              
+            
+
+            <code class="ruby">    # Responder con el detalle de la creación</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="146">
+            
+
+            
+              
+            
+
+            <code class="ruby">    render json: {</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="147">
+            
+
+            
+              
+            
+
+            <code class="ruby">      message: &quot;Tickets created successfully&quot;,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="148">
+            
+
+            
+              
+            
+
+            <code class="ruby">      details: {</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="149">
+            
+
+            
+              
+            
+
+            <code class="ruby">        previously_existing_tickets: current_ticket_count,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="150">
+            
+
+            
+              
+            
+
+            <code class="ruby">        tickets_created: created_tickets.size,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="151">
+            
+
+            
+              
+            
+
+            <code class="ruby">        total_tickets_now: current_ticket_count + created_tickets.size</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="152">
+            
+
+            
+              
+            
+
+            <code class="ruby">      },</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="153">
+            
+
+            
+              
+            
+
+            <code class="ruby">      tickets: created_tickets.map { |t| { id: t.id, event_id: t.event_id } }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="154">
+            
+
+            
+              
+            
+
+            <code class="ruby">    }, status: :created</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="155">
+            
+
+            
+              
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="156">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  def show</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="157">
+            
+              <span class="hits">3</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">    @ticket = Ticket.find(params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="158">
+            
+              <span class="hits">2</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">    render json: @ticket</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="159">
+            
+
+            
+              
+            
+
+            <code class="ruby">  rescue ActiveRecord::RecordNotFound</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="160">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">    render json: { error: &quot;Ticket not found&quot; }, status: :not_found</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="161">
+            
+
+            
+              
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="162">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="163">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  def index</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="164">
+            
+              <span class="hits">3</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">    @tickets = Ticket.all</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="165">
+            
+              <span class="hits">3</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">    render json: @tickets</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="166">
+            
+
+            
+              
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="167">
+            
+
+            
+              
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
       
         <div class="source_table" id="966732900eb2b6a131946de10d5d55738285fa45">
   <div class="header">
@@ -354,6 +2953,1695 @@
             
 
             <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="43c5f7dd7ad674bbb032d7909a60845cea9629a4">
+  <div class="header">
+    <h3>app/models/application_record.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+      <h4>
+        <span class="green">
+  100.0%
+</span>
+
+        branches covered
+      </h4>
+    
+
+    <div class="t-line-summary">
+      <b>2</b> relevant lines.
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+      <div class="t-branch-summary">
+          <span><b>0</b> total branches, </span>
+          <span class="green"><b>0</b> branches covered</span> and
+          <span class="red"><b>0</b> branches missed.</span>
+      </div>
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">class ApplicationRecord &lt; ActiveRecord::Base</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="2">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  primary_abstract_class</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="3">
+            
+
+            
+              
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="ae3ef1a87870d0a2dd775ba4a9706369011a3c12">
+  <div class="header">
+    <h3>app/models/status.rb</h3>
+    <h4>
+      <span class="red">
+  63.64%
+</span>
+
+      lines covered
+    </h4>
+
+    
+      <h4>
+        <span class="red">
+  20.0%
+</span>
+
+        branches covered
+      </h4>
+    
+
+    <div class="t-line-summary">
+      <b>11</b> relevant lines.
+      <span class="green"><b>7</b> lines covered</span> and
+      <span class="red"><b>4</b> lines missed.</span>
+    </div>
+
+    
+      <div class="t-branch-summary">
+          <span><b>5</b> total branches, </span>
+          <span class="green"><b>1</b> branches covered</span> and
+          <span class="red"><b>4</b> branches missed.</span>
+      </div>
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">class Status &lt; ApplicationRecord</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="2">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  has_many :tickets</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  has_many :ticket_logs</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="4">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="5">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  validates :name, presence: true, length: { maximum: 50 }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="6">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  def can_transition_to?(new_status)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="8">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">    case name</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
+            
+
+            
+              
+                <span class="hits" title="when branch hit 1 times">
+                  when: 1
+                </span>
+              
+            
+
+            <code class="ruby">    when &quot;available&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="10">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">      [ &quot;reserved&quot;, &quot;sold&quot; ].include?(new_status.name)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed-branch" data-hits="" data-linenumber="11">
+            
+
+            
+              
+                <span class="hits" title="when branch hit 0 times">
+                  when: 0
+                </span>
+              
+            
+
+            <code class="ruby">    when &quot;reserved&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="12">
+            
+
+            
+              
+            
+
+            <code class="ruby">      [ &quot;sold&quot;, &quot;canceled&quot; ].include?(new_status.name)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed-branch" data-hits="" data-linenumber="13">
+            
+
+            
+              
+                <span class="hits" title="when branch hit 0 times">
+                  when: 0
+                </span>
+              
+            
+
+            <code class="ruby">    when &quot;sold&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="14">
+            
+
+            
+              
+            
+
+            <code class="ruby">      false</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed-branch" data-hits="" data-linenumber="15">
+            
+
+            
+              
+                <span class="hits" title="when branch hit 0 times">
+                  when: 0
+                </span>
+              
+            
+
+            <code class="ruby">    when &quot;canceled&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="16">
+            
+
+            
+              
+            
+
+            <code class="ruby">      false</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed-branch" data-hits="" data-linenumber="17">
+            
+
+            
+              
+                <span class="hits" title="else branch hit 0 times">
+                  else: 0
+                </span>
+              
+            
+
+            <code class="ruby">    else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="18">
+            
+
+            
+              
+            
+
+            <code class="ruby">      false</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="19">
+            
+
+            
+              
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="20">
+            
+
+            
+              
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="21">
+            
+
+            
+              
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="e7e9efc3083892e6942d8618ac6c4a67932c6b40">
+  <div class="header">
+    <h3>app/models/ticket.rb</h3>
+    <h4>
+      <span class="red">
+  62.5%
+</span>
+
+      lines covered
+    </h4>
+
+    
+      <h4>
+        <span class="red">
+  50.0%
+</span>
+
+        branches covered
+      </h4>
+    
+
+    <div class="t-line-summary">
+      <b>24</b> relevant lines.
+      <span class="green"><b>15</b> lines covered</span> and
+      <span class="red"><b>9</b> lines missed.</span>
+    </div>
+
+    
+      <div class="t-branch-summary">
+          <span><b>2</b> total branches, </span>
+          <span class="green"><b>1</b> branches covered</span> and
+          <span class="red"><b>1</b> branches missed.</span>
+      </div>
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">class Ticket &lt; ApplicationRecord</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="2">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  belongs_to :status</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="3">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="4">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  has_many :ticket_logs, dependent: :destroy</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="5">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="6">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  before_validation :set_default_status</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="8">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  validates :event_id, presence: true, numericality: { greater_than: 0 }, allow_nil: false</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="9">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  validates :expire_date, presence: true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="10">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  validates :serial_ticket, uniqueness: true, presence: true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+
+            
+              
+            
+
+            <code class="ruby">  #  scope for search of the controller</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="14">
+            
+              <span class="hits">3</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  scope :per_event, -&gt;(event_id) { Ticket.where(event_id: event_id) }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="15">
+            
+
+            
+              
+            
+
+            <code class="ruby">  # Ex:- scope :active, -&gt; {where(:active =&gt; true)}</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="16">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  def self.giving_ticket_avaliables(event_id, quantity, state)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="17">
+            
+
+            
+              
+            
+
+            <code class="ruby">    @response= Ticket.per_event(event_id).joins(:status).where(statuses: { name: state }).limit(quantity)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="18">
+            
+
+            
+              
+            
+
+            <code class="ruby">    @response</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="19">
+            
+
+            
+              
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="20">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="21">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="22">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  def self.get_data(event_id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="23">
+            
+
+            
+              
+            
+
+            <code class="ruby">    NetService.get_resource(&quot;events/#{event_id}.json&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="24">
+            
+
+            
+              
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="25">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="26">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  private</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="27">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="28">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  def set_default_status</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed-branch" data-hits="1034" data-linenumber="29">
+            
+              <span class="hits">1034</span>
+            
+
+            
+              
+                <span class="hits" title="then branch hit 0 times">
+                  then: 0
+                </span>
+              
+                <span class="hits" title="else branch hit 1034 times">
+                  else: 1034
+                </span>
+              
+            
+
+            <code class="ruby">    self.expire_date = 30.days.from_now if self.expire_date.nil?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1034" data-linenumber="30">
+            
+              <span class="hits">1034</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">    self.serial_ticket ||= set_serial_ticket</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="31">
+            
+
+            
+              
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="32">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="33">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  def set_serial_ticket</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="34">
+            
+
+            
+              
+            
+
+            <code class="ruby">    event_data = NetService.get_resource(&quot;events/#{self.event_id}.json&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="35">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="36">
+            
+
+            
+              
+            
+
+            <code class="ruby">    name_event = event_data[&quot;name&quot;]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="37">
+            
+
+            
+              
+            
+
+            <code class="ruby">    id_event = event_data[&quot;id&quot;]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="38">
+            
+
+            
+              
+            
+
+            <code class="ruby">    serial = name_event.split.map { | word | word[0] }.join</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="39">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="40">
+            
+
+            
+              
+            
+
+            <code class="ruby">    serial  += &quot;-&quot; +  id_event.to_s + &quot;-&quot; +  SecureRandom.hex(4)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="41">
+            
+
+            
+              
+            
+
+            <code class="ruby">    serial</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="42">
+            
+
+            
+              
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="43">
+            
+
+            
+              
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="e70ce9b6fbe4dfe36ccb954e7e506335eff43398">
+  <div class="header">
+    <h3>app/models/ticket_log.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+      <h4>
+        <span class="green">
+  100.0%
+</span>
+
+        branches covered
+      </h4>
+    
+
+    <div class="t-line-summary">
+      <b>4</b> relevant lines.
+      <span class="green"><b>4</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+      <div class="t-branch-summary">
+          <span><b>0</b> total branches, </span>
+          <span class="green"><b>0</b> branches covered</span> and
+          <span class="red"><b>0</b> branches missed.</span>
+      </div>
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">class TicketLog &lt; ApplicationRecord</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="2">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  belongs_to :ticket</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  belongs_to :status</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="4">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="5">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  validates :status_id, presence: true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="6">
+            
+
+            
+              
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="0a965da303a345a6db96f664f7d07adb33a486fe">
+  <div class="header">
+    <h3>db/seeds.rb</h3>
+    <h4>
+      <span class="green">
+  90.91%
+</span>
+
+      lines covered
+    </h4>
+
+    
+      <h4>
+        <span class="red">
+  0.0%
+</span>
+
+        branches covered
+      </h4>
+    
+
+    <div class="t-line-summary">
+      <b>11</b> relevant lines.
+      <span class="green"><b>10</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
+    </div>
+
+    
+      <div class="t-branch-summary">
+          <span><b>1</b> total branches, </span>
+          <span class="green"><b>0</b> branches covered</span> and
+          <span class="red"><b>1</b> branches missed.</span>
+      </div>
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">require &#39;faker&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="3">
+            
+
+            
+              
+            
+
+            <code class="ruby"># Populate statuses</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="4">
+            
+
+            
+              
+            
+
+            <code class="ruby">[</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="5">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  &#39;available&#39;,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="6">
+            
+
+            
+              
+            
+
+            <code class="ruby">  &#39;reserved&#39;,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="7">
+            
+
+            
+              
+            
+
+            <code class="ruby">  &#39;sold&#39;,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
+            
+
+            
+              
+            
+
+            <code class="ruby">  &#39;canceled&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
+            
+
+            
+              
+            
+
+            <code class="ruby">].each do |state|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="10">
+            
+              <span class="hits">4</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  Status.find_or_create_by!(name: state)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
+            
+
+            
+              
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+
+            
+              
+            
+
+            <code class="ruby"># Fetch all statuses</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="14">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">statuses = Status.all</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="15">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+
+            
+              
+            
+
+            <code class="ruby"># Generate 1000 unique tickets and ticket logs</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="17">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">1000.times do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1000" data-linenumber="18">
+            
+              <span class="hits">1000</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  serial_ticket = SecureRandom.hex(8)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed-branch" data-hits="1000" data-linenumber="19">
+            
+              <span class="hits">1000</span>
+            
+
+            
+              
+                <span class="hits" title="body branch hit 0 times">
+                  body: 0
+                </span>
+              
+            
+
+            <code class="ruby">  while Ticket.exists?(serial_ticket: serial_ticket)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="20">
+            
+
+            
+              
+            
+
+            <code class="ruby">    serial_ticket = SecureRandom.hex(8)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="21">
+            
+
+            
+              
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="22">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1000" data-linenumber="23">
+            
+              <span class="hits">1000</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  ticket = Ticket.create!(</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="24">
+            
+
+            
+              
+            
+
+            <code class="ruby">    event_id: Faker::Number.between(from: 1, to: 20), # Fixed range of event IDs</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="25">
+            
+
+            
+              
+            
+
+            <code class="ruby">    expire_date: Faker::Date.forward(days: 365),      # Random future date</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="26">
+            
+
+            
+              
+            
+
+            <code class="ruby">    status_id: statuses.sample.id,                   # Random status</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="27">
+            
+
+            
+              
+            
+
+            <code class="ruby">    serial_ticket: serial_ticket,                    # Unique serial</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="28">
+            
+
+            
+              
+            
+
+            <code class="ruby">    created_at: Time.now,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="29">
+            
+
+            
+              
+            
+
+            <code class="ruby">    updated_at: Time.now</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="30">
+            
+
+            
+              
+            
+
+            <code class="ruby">  )</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="31">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1000" data-linenumber="32">
+            
+              <span class="hits">1000</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">  TicketLog.create!(</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="33">
+            
+
+            
+              
+            
+
+            <code class="ruby">    ticket_id: ticket.id,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="34">
+            
+
+            
+              
+            
+
+            <code class="ruby">    status_id: ticket.status_id,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="35">
+            
+
+            
+              
+            
+
+            <code class="ruby">    created_at: Time.now,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="36">
+            
+
+            
+              
+            
+
+            <code class="ruby">    updated_at: Time.now</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="37">
+            
+
+            
+              
+            
+
+            <code class="ruby">  )</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="38">
+            
+
+            
+              
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="39">
+            
+
+            
+              
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="40">
+            
+              <span class="hits">1</span>
+            
+
+            
+              
+            
+
+            <code class="ruby">puts &quot;Seed completed: 1000 tickets and their logs have been created.&quot;</code>
           </li>
         </div>
       

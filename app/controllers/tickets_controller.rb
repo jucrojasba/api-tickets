@@ -153,4 +153,15 @@ class TicketsController < ApplicationController
       tickets: created_tickets.map { |t| { id: t.id, event_id: t.event_id } }
     }, status: :created
   end
+  def show
+    @ticket = Ticket.find(params[:id])
+    render json: @ticket
+  rescue ActiveRecord::RecordNotFound
+    render json: { error: "Ticket not found" }, status: :not_found
+  end
+
+  def index
+    @tickets = Ticket.all
+    render json: @tickets
+  end
 end
